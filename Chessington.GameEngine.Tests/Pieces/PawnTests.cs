@@ -67,6 +67,7 @@ namespace Chessington.GameEngine.Tests.Pieces
 
             moves.Should().HaveCount(2);
             moves.Should().Contain(Square.At(4, 5));
+            moves.Should().Contain(Square.At(5, 5));
         }
 
         [Test]
@@ -80,6 +81,7 @@ namespace Chessington.GameEngine.Tests.Pieces
 
             moves.Should().HaveCount(2);
             moves.Should().Contain(Square.At(3, 3));
+            moves.Should().Contain(Square.At(2, 3));
         }
 
         [Test]
