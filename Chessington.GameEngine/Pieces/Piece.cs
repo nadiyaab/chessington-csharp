@@ -4,11 +4,13 @@ using System.Linq;
 
 namespace Chessington.GameEngine.Pieces
 {
-    public abstract class Piece
+    public abstract class Piece 
     {
+        protected bool HasMoved{ get; set; }
         protected Piece(Player player)
         {
             Player = player;
+            HasMoved = false;
         }
 
         public Player Player { get; private set; }
@@ -19,6 +21,7 @@ namespace Chessington.GameEngine.Pieces
         {
             var currentSquare = board.FindPiece(this);
             board.MovePiece(currentSquare, newSquare);
+            HasMoved = true;
         }
     }
 }
